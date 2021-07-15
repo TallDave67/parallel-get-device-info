@@ -1,0 +1,256 @@
+# Parallel: Get Device Info (DPC++)
+
+Use Intel's oneAPI DPC++ to query for information from your accelerator devices.
+
+Linux distro "Pop!_OS 21.04"
+
+cmake version 3.18.4
+
+Intel(R) oneAPI DPC++/C++ Compiler 2021.3.0 (2021.3.0.20210619)
+
+## Steps
+
+cd oneapi
+
+./build.sh
+
+./build/get-device-info
+
+## History
+
+dates: July 14 - 15, 2021
+
+duration: 6 hours
+
+### Code from Another Developer
+
+This code came directly from Intel.
+
+[oneAPI Base Training Module](https://devcloud.intel.com/oneapi/get_started/baseTrainingModules/)
+
+I modified the original Intel code to crack open and output most of the available device info (still more to explore).
+
+### Parellel
+
+I placed this in my .bashrc file so the dpcpp compiler can be found.
+
+> export ONEAPI_DIR="/opt/intel/oneapi"
+
+> [ -s "$ONEAPI_DIR/setvars.sh" ] && \. "$ONEAPI_DIR/setvars.sh"  # initialize oneAPI environment
+
+## Output
+
+device_type: 2
+
+vendor_id: 32902
+
+max_compute_units: 8
+
+max_work_item_dimensions: 3
+
+max_work_item_sizes: 
+
+  8192
+
+  8192
+
+  8192
+
+max_work_group_size: 8192
+
+preferred_vector_width_char: 1
+
+preferred_vector_width_short: 1
+
+preferred_vector_width_int: 1
+
+preferred_vector_width_long: 1
+
+preferred_vector_width_float: 1
+
+preferred_vector_width_double: 1
+
+preferred_vector_width_half: 0
+
+native_vector_width_char: 32
+
+native_vector_width_short: 16
+
+native_vector_width_int: 8
+
+native_vector_width_long: 4
+
+native_vector_width_float: 8
+
+native_vector_width_double: 4
+
+native_vector_width_half: 0
+
+max_clock_frequency: 1600
+
+address_bits: 64
+
+max_mem_alloc_size: 4119711744
+
+image_support: 1
+
+max_read_image_args: 480
+
+max_write_image_args: 480
+
+image2d_max_height: 16384
+
+image2d_max_width: 16384
+
+image3d_max_height: 2048
+
+image3d_max_width: 2048
+
+image3d_max_depth: 2048
+
+image_max_buffer_size: 257481984
+
+image_max_array_size: 2048
+
+max_samplers: 480
+
+max_parameter_size: 3840
+
+mem_base_addr_align: 1024
+
+half_fp_config: 
+
+single_fp_config: 
+
+  1
+
+  2
+
+  4
+
+double_fp_config: 
+
+  1
+
+  2
+
+  4
+
+  8
+
+  16
+
+  32
+
+global_mem_cache_type: 2
+
+global_mem_cache_line_size: 64
+
+global_mem_cache_size: 262144
+
+global_mem_size: 16478846976
+
+max_constant_buffer_size: 131072
+
+max_constant_args: 480
+
+local_mem_type: 2
+
+local_mem_size: 32768
+
+error_correction_support: 0
+
+host_unified_memory: 1
+
+profiling_timer_resolution: 1
+
+is_endian_little: 1
+
+is_available: 1
+
+is_compiler_available: 1
+
+is_linker_available: 1
+
+execution_capabilities: 
+
+  0
+
+  1
+
+queue_profiling: 1
+
+built_in_kernels: 
+
+platform_name: Intel(R) OpenCL
+
+name: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+
+vendor: Intel(R) Corporation
+
+driver_version: 2021.12.6.0.19_160000
+
+profile: FULL_PROFILE
+
+version: 2.1
+
+opencl_c_version: OpenCL C 2.0 
+
+extensions: 
+
+  cl_khr_icd
+
+  cl_khr_global_int32_base_atomics
+
+  cl_khr_global_int32_extended_atomics
+
+  cl_khr_local_int32_base_atomics
+
+  cl_khr_local_int32_extended_atomics
+
+  cl_khr_int64_base_atomics
+
+  cl_khr_int64_extended_atomics
+
+  cl_khr_byte_addressable_store
+
+  cl_khr_depth_images
+
+  cl_khr_3d_image_writes
+
+  cl_khr_il_program
+
+  cl_intel_unified_shared_memory_preview
+
+  cl_intel_subgroups
+
+  cl_intel_subgroups_char
+
+  cl_intel_subgroups_short
+
+  cl_intel_subgroups_long
+
+  cl_intel_spirv_subgroups
+
+  cl_intel_required_subgroup_size
+
+  cl_intel_exec_by_local_thread
+
+  cl_intel_vec_len_hint
+
+  cl_intel_device_partition_by_names
+
+  cl_khr_spir
+
+  cl_khr_fp64
+
+  cl_khr_image2d_from_buffer
+
+printf_buffer_size: 1048576
+
+preferred_interop_user_sync: 0
+
+partition_max_sub_devices: 8
+
+reference_count: 1
+
