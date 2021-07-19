@@ -3,6 +3,9 @@
 //
 // SPDX-License-Identifier: MIT
 // =============================================================
+
+// The original Intel code has been modified by David Bellis in 2021
+
 #include <CL/sycl.hpp>
 
 using namespace cl::sycl;
@@ -127,10 +130,19 @@ int main() {
   //std::cout << "parent_device_name: " << parent_device.get_info<info::device::name>() << std::endl;
   //
   std::cout << "partition_max_sub_devices: " << device.get_info<info::device::partition_max_sub_devices>() << std::endl;
-  //std::cout << "partition_properties: " << device.get_info<info::device::partition_properties>() << std::endl;
-  //std::cout << "partition_affinity_domains: " << device.get_info<info::device::partition_affinity_domains>() << std::endl;
-  //std::cout << "partition_type_property: " << device.get_info<info::device::partition_type_property>() << std::endl;
-  //std::cout << "partition_type_affinity_domain: " << device.get_info<info::device::partition_type_affinity_domain>() << std::endl;
+  //
+  std::vector<info::partition_property> partition_properties = device.get_info<info::device::partition_properties>();
+  std::cout << "partition_properties: ";
+  for(auto& p: partition_properties){std::cout << std::endl << "  " << static_cast<long>(p);}
+  std::cout << std::endl;
+  //
+  std::vector<info::partition_affinity_domain> partition_affinity_domains = device.get_info<info::device::partition_affinity_domains>();
+  std::cout << "partition_affinity_domains: ";
+  for(auto& p: partition_affinity_domains){std::cout << std::endl << "  " << static_cast<long>(p);}
+  std::cout << std::endl;
+  //
+  std::cout << "partition_type_property: " << static_cast<cl_device_partition_property>(device.get_info<info::device::partition_type_property>()) << std::endl;
+  std::cout << "partition_type_affinity_domain: " << static_cast<cl_device_affinity_domain>(device.get_info<info::device::partition_type_affinity_domain>()) << std::endl;
   std::cout << "reference_count: " << device.get_info<info::device::reference_count>() << std::endl;
   return 0;
 }
