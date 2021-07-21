@@ -30,7 +30,7 @@ This code came directly from Intel.
 
 I modified the original Intel code to crack open and output the available device info.
 
-### Parellel
+### Compilation
 
 I placed this in my .bashrc file so the dpcpp compiler can be found.
 
