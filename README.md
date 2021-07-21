@@ -26,7 +26,7 @@ duration: 6 hours
 
 This code came directly from Intel.
 
-[oneAPI Base Training Module](https://devcloud.intel.com/oneapi/get_started/baseTrainingModules/)
+[oneAPI Base Training Module 2: DPC++ Program Structure](https://devcloud.intel.com/oneapi/get_started/baseTrainingModules/)
 
 I modified the original Intel code to crack open and output the available device info.
 
